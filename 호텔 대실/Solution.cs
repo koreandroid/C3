@@ -36,12 +36,12 @@ public class Solution {
 
     private string findAvailableTime(string endTime) {
         if (endTime[3] < '5') {
-            return endTime.Substring(0, 3) + new string((char) (endTime[3] + 1), 1) + new string(endTime[4], 1);
+            return endTime.Substring(0, 3) + new string((char) (endTime[3] + 1), 1) + endTime[4].ToString();
         } else if (endTime[1] < '9') {
-            return new string(endTime[0], 1) + new string((char) (endTime[1] + 1), 1) +
-                ":0" + new string(endTime[4], 1);
+            return endTime[0].ToString() + new string((char) (endTime[1] + 1), 1) + ":0" +
+                endTime[4].ToString();
         } else {
-            return new string((char) (endTime[0] + 1), 1) + "0:0" + new string(endTime[4], 1);
+            return new string((char) (endTime[0] + 1), 1) + "0:0" + endTime[4].ToString();
         }
     }
 
